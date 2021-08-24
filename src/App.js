@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+import { Button, Grid, Typography, Paper } from "@material-ui/core";
+
+import { Heatmap, MarkerCluster } from "./components";
+
+const App = () => {
+  const [page, setPage] = useState("heatmap");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <Paper
+        style={{
+          width: "100vw",
+          height: "10vh",
+          display: "flex",
+          backgroundColor: "#acd3df",
+        }}
+        elevation={10}
+      >
+        <Grid
+          style={{ width: "50%", height: "100%", paddingLeft: "20px" }}
+          container
+          alignItems="center"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Typography variant="h6">leaflet-with-react</Typography>
+        </Grid>
+        <Grid
+          style={{ width: "50%", height: "100%", paddingRight: "20px" }}
+          container
+          alignItems="center"
+          justifyContent="flex-end"
+        >
+          <Button
+            style={{ marginRight: "20px" }}
+            variant="contained"
+            color="primary"
+            onClick={() => setPage("heatmap")}
+          >
+            Heatmap
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => setPage("markercluster")}
+          >
+            Markercluster
+          </Button>
+        </Grid>
+      </Paper>
+      {page === "heatmap" ? <Heatmap /> : <MarkerCluster />}
+    </>
   );
-}
+};
 
 export default App;
