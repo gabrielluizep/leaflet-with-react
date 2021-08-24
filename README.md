@@ -2,13 +2,15 @@
 
 Está precisando adicionar um mapa interativo a sua aplicação React? Então este conjunto de bibliotecas pode te ajuda a chegar em seu objetivo!
 
+##### [Veja aqui um exemplo do Leaflet funcionando com React.](https://gabrielluizep.github.io/leaflet-with-react/)
+
 ## O que é o LeafletJS?
 
-LeafletJS é uma biblioteca OpenSource em JavaScript que te auxilia a adicionar mapas OpenStreetMap (OSM) em sua aplicação web. Além de disponibilizar os principais aspectos do mapa OSM, a biblioteca conta com plugins que permitem lidar com a informação mostrada no mapa de uma maneira mais otimizada, como por exemplo heatmaps e agrupamento de pontos de localização.
+[LeafletJS](https://leafletjs.com/) é uma biblioteca OpenSource em JavaScript que te auxilia a adicionar mapas [OpenStreetMap (OSM)](https://www.openstreetmap.org/) em sua aplicação web. Além de disponibilizar os principais aspectos do mapa OSM, a biblioteca conta com plugins que permitem lidar com a informação mostrada no mapa de uma maneira mais otimizada, como por exemplo heatmaps e agrupamento de pontos de localização.
 
 ## Como utilizá-lo no React?
 
-Para acelearar o desenvolvimento e aplicar o padrão de código do React foi criado uma biblioteca auxiliar que abstrai funções do Leaflet em componentes JSX, chamada React Leaflet. O uso desta biblioteca é opcional para a utilização do Leaflet no React, porém auxilia bastante e neste documento será tratado da utilização das duas bibliotecas juntas.
+Para acelearar o desenvolvimento e aplicar o padrão de código do React foi criado uma biblioteca auxiliar que abstrai funções do Leaflet em componentes JSX, chamada [React Leaflet](https://react-leaflet.js.org/). O uso desta biblioteca é opcional para a utilização do Leaflet no React, porém auxilia bastante e neste documento será tratado da utilização das duas bibliotecas juntas.
 
 ## Getting started with create-react-app && leaflet!
 
@@ -28,7 +30,7 @@ cd leaflet-with-react
 npm i leaflet react-leaflet
 ```
 
-Devido a um bug na biblioteca é nessário fazer uma alteração no package.json quando utilizado o react-leaflet em um React App criado com create-react-app, apenas substitua o ”browserslist” padrão do create-react-app pelo seguinte array:
+Devido a um [bug](https://stackoverflow.com/questions/67551922/cra-react-leaflet-failed-to-compile) na biblioteca é nessário fazer uma alteração no package.json quando utilizado o react-leaflet em um React App criado com create-react-app, apenas substitua o ”browserslist” padrão do create-react-app pelo seguinte array:
 
 ```json
 "browserslist": [
@@ -139,11 +141,11 @@ Para utilizálo basta inserir o componente Popup dentro de um marcador:
 
 ###### Nota: é possível renderizar componentes dentro do Popup!
 
-## Utilizando plugins Leaflet no React com useMap
+## Utilizando [plugins Leaflet](https://leafletjs.com/plugins.html.) no React com useMap
 
 A biblioteca LeafletJS possui alguns plugins auxiliares que permitem a adição de algumas features, tais como: heatmap, geocoding, clusterização, etc. Porém, utilizando a abstração React Leaflet, para utilizá-los seria necessário optar por uma maneira mais voltada ao JS puro para tratar o mapa, dado este problema foi criado um hook que permite a utilização de funções do Leaflet dentro de um componente, chamado useMap.
 
-### Heatmap plugin
+### [Heatmap plugin](https://github.com/Leaflet/Leaflet.heat)
 
 Para exemplificar utilizarei o plugin Leaflet.heat, que cria um heatmap com pontos passados a ele como propriedade.
 
@@ -158,20 +160,12 @@ Importamos a biblioteca e criamos a Layer de Heatmap para podermos usar em nosso
 ```js
 import "leaflet.heat";
 
-import { addressPoints } from "./locations";
+import { locations } from "./locations";
 
 const HeatmapLayer = () => {
   const map = useMap();
 
-  useEffect(() => {
-    const points = addressPoints
-      ? addressPoints.map((point) => {
-          return [point[0], point[1], 1];
-        })
-      : [];
-
-    L.heatLayer(points, { blur: 15 }).addTo(map);
-  }, []);
+  L.heatLayer(locations, { blur: 15 }).addTo(map);
 
   return null;
 };
@@ -181,21 +175,21 @@ Levando em consideração o arquivo locations.js que exporta um array de arrays 
 
 ```js
 export const addressPoints = [
-  [-37.8869090667, 175.3657417333, "486"],
-  [-37.8894207167, 175.4015351167, "807"],
-  [-37.8927369333, 175.4087452333, "899"],
-  [-37.90585105, 175.4453463833, "1273"],
-  [-37.9064188833, 175.4441556833, "1258"],
-  [-37.90584715, 175.4463564333, "1279"],
-  [-37.9033391333, 175.4244005667, "1078"],
-  [-37.9061991333, 175.4492620333, "1309"],
-  [-37.9058955167, 175.4445613167, "1261"],
-  [-37.88888045, 175.39146475, "734"],
-  [-37.8950811333, 175.41079175, "928"],
+  [-37.8869090667, 175.3657417333],
+  [-37.8894207167, 175.4015351167],
+  [-37.8927369333, 175.4087452333],
+  [-37.90585105, 175.4453463833],
+  [-37.9064188833, 175.4441556833],
   .
   .
   .
   ]
+```
+
+Aplicamos a o componente de layer dentro do MapContainer
+
+```js
+<HeatmapLayer />
 ```
 
 ## Outras aplicações para o useMap
@@ -224,7 +218,7 @@ const ChangeView = (props) => {
 <ChangeView newCenter={{ lat: dynamicLat, lng: dynamicLng }} />
 ```
 
-## Clusterização de marcadores com React Leaflet Markercluster
+## Clusterização de marcadores com [React Leaflet Markercluster](https://github.com/yuzhva/react-leaflet-markercluster)
 
 Para a utilização do clusterizador de marcadores, ou seja um agrupador de marcadores, é possível utilizar a biblioteca auxiliar react-leaflet-markercluster ao invés de utilizar o plugin e ter de fazer todo o processo na mão.
 

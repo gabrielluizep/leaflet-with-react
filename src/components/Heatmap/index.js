@@ -9,15 +9,7 @@ import { locations } from "../../locations";
 const HeatmapLayer = () => {
   const map = useMap();
 
-  useEffect(() => {
-    const points = locations
-      ? locations.map((point) => {
-          return [point[0], point[1], 1];
-        })
-      : [];
-
-    L.heatLayer(points, { blur: 15 }).addTo(map);
-  }, []);
+  L.heatLayer(locations, { blur: 15 }).addTo(map);
 
   return null;
 };

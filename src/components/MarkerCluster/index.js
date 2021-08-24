@@ -49,9 +49,9 @@ function MarkerCluster() {
           })
         }
       >
-        {locations.map((point) => {
+        {locations.map((point, index) => {
           return (
-            <Marker position={[point[0], point[1]]}>
+            <Marker key={index} position={[point[0], point[1]]}>
               <Popup>
                 <Typography>Latitude: {point[0]}</Typography>
                 <Typography>Longitude: {point[1]}</Typography>

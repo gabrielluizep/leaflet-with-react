@@ -5,7 +5,7 @@ import { Button, Grid, Typography, Paper } from "@material-ui/core";
 import { Heatmap, MarkerCluster } from "./components";
 
 const App = () => {
-  const [page, setPage] = useState("heatmap");
+  const [page, setPage] = useState("mark");
   return (
     <>
       <Paper
