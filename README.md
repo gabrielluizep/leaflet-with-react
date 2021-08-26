@@ -1,6 +1,6 @@
 # 🗺️ Mapas no React com LeafletJS
 
-Está precisando adicionar um mapa interativo a sua aplicação React? Então este conjunto de bibliotecas pode te ajuda a chegar em seu objetivo!
+Está precisando adicionar um mapa interativo a sua aplicação React? Então este conjunto de bibliotecas podem te ajudar a chegar em seu objetivo!
 
 ##### [Veja aqui um exemplo do Leaflet funcionando com React.](https://gabrielluizep.github.io/leaflet-with-react/)
 
@@ -10,7 +10,7 @@ Está precisando adicionar um mapa interativo a sua aplicação React? Então es
 
 ## Como utilizá-lo no React?
 
-Para acelearar o desenvolvimento e aplicar o padrão de código do React foi criado uma biblioteca auxiliar que abstrai funções do Leaflet em componentes JSX, chamada [React Leaflet](https://react-leaflet.js.org/). O uso desta biblioteca é opcional para a utilização do Leaflet no React, porém auxilia bastante e neste documento será tratado da utilização das duas bibliotecas juntas.
+Para acelerar o desenvolvimento e aplicar o padrão de código do React foi criado uma biblioteca auxiliar que abstrai funções do Leaflet em componentes JSX, chamada [React Leaflet](https://react-leaflet.js.org/). O uso desta biblioteca é opcional para a utilização do Leaflet no React, porém auxilia bastante e neste documento será tratado da utilização das duas bibliotecas juntas.
 
 ## Getting started with create-react-app && leaflet!
 
