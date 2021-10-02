@@ -58,14 +58,14 @@ Para adicionar efetivamente o mapa a aplicação adicione o componente de contai
 
 ```js
 <MapContainer
-  style={{ width: "100vw", height: "100vh" }}
-  center={[0, 0]}
-  zoom={13}
+	style={{ width: "100vw", height: "100vh" }}
+	center={[0, 0]}
+	zoom={13}
 >
-  <TileLayer
-    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  />
+	<TileLayer
+		attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+		url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+	/>
 </MapContainer>
 ```
 
@@ -81,15 +81,15 @@ O React Leaflet disponibiliza um componente que nos permite fazer isto de uma fo
 
 ```js
 <MapContainer
-  style={{ width: "100vw", height: "100vh" }}
-  center={[0, 0]}
-  zoom={13}
+	style={{ width: "100vw", height: "100vh" }}
+	center={[0, 0]}
+	zoom={13}
 >
-  <TileLayer
-    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  />
-  <Marker position={[0, 0]}></Marker>
+	<TileLayer
+		attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+		url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+	/>
+	<Marker position={[0, 0]}></Marker>
 </MapContainer>
 ```
 
@@ -98,33 +98,33 @@ O React Leaflet disponibiliza um componente que nos permite fazer isto de uma fo
 Com o marcador adicionado a tela você notará que a imagem do marcador não está sendo corretamente aplicada, para corrigir isso você deverá importar e definir a imagem como configuração do marcador, isso pode ser feito de maneira genérica alterando o padrão de todos os marcadores (o exemplo abaixo utiliza da imagem padrão do LeafletJS para marcadores e é adicionado ao index.js):
 
 ```js
-import L from "leaflet";
+import L from "leaflet"
 
-import icon from "leaflet/dist/images/marker-icon.png";
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import icon from "leaflet/dist/images/marker-icon.png"
+import iconShadow from "leaflet/dist/images/marker-shadow.png"
 
 let DefaultIcon = L.icon({
-  iconUrl: icon,
-  shadowUrl: iconShadow,
-});
+	iconUrl: icon,
+	shadowUrl: iconShadow
+})
 
-L.Marker.prototype.options.icon = DefaultIcon;
+L.Marker.prototype.options.icon = DefaultIcon
 ```
 
 Ou alterando pontualmente o ícone do marcador (App.js):
 
 ```js
-import L from "leaflet";
+import L from "leaflet"
 
-import icon from "../assets/custom-icon.png";
-import iconShadow from "../assets/custom-shadow.png";
+import icon from "../assets/custom-icon.png"
+import iconShadow from "../assets/custom-shadow.png"
 
 let CustomIcon = L.icon({
-  iconUrl: icon,
-  shadowUrl: iconShadow,
-});
+	iconUrl: icon,
+	shadowUrl: iconShadow
+})
 
-<Marker position={[0, 0]} icon={CustomIcon}></Marker>;
+;<Marker position={[0, 0]} icon={CustomIcon}></Marker>
 ```
 
 ### Popups
@@ -135,7 +135,7 @@ Para utilizálo basta inserir o componente Popup dentro de um marcador:
 
 ```js
 <Marker position={[0, 0]}>
-  <Popup>Marcador com popup com React e Leaflet</Popup>
+	<Popup>Marcador com popup com React e Leaflet</Popup>
 </Marker>
 ```
 
@@ -158,17 +158,17 @@ npm i leaflet.heat
 Importamos a biblioteca e criamos a Layer de Heatmap para podermos usar em nosso mapa:
 
 ```js
-import "leaflet.heat";
+import "leaflet.heat"
 
-import { locations } from "./locations";
+import { locations } from "./locations"
 
 const HeatmapLayer = () => {
-  const map = useMap();
+	const map = useMap()
 
-  L.heatLayer(locations, { blur: 15 }).addTo(map);
+	L.heatLayer(locations, { blur: 15 }).addTo(map)
 
-  return null;
-};
+	return null
+}
 ```
 
 Levando em consideração o arquivo locations.js que exporta um array de arrays que possuem latitude, longitude e peso do ponto
@@ -206,12 +206,12 @@ Podemos criar da seguinte maneirao componente que fará a troca de centro do map
 
 ```js
 const ChangeView = (props) => {
-  const map = useMap();
+	const map = useMap()
 
-  map.setView([props.newCenter.lat, props.newCenter.lng], 18);
+	map.setView([props.newCenter.lat, props.newCenter.lng], 18)
 
-  return null;
-};
+	return null
+}
 ```
 
 ```js
@@ -234,9 +234,9 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 
 ```js
 <MarkerClusterGroup>
-  <Marker position={[0, 0]} />
-  <Marker position={[0, 0]} />
-  <Marker position={[0, 0]} />
+	<Marker position={[0, 0]} />
+	<Marker position={[0, 0]} />
+	<Marker position={[0, 0]} />
 </MarkerClusterGroup>
 ```
 
@@ -244,32 +244,32 @@ Agora você tem um cluster de marcadores em seu mapa, porém o cluster não poss
 
 ```css
 .clusterDivStyle {
-  width: 40px;
-  height: 40px;
+	width: 40px;
+	height: 40px;
 
-  background: #ba1122;
-  border: 3px solid #ededed;
+	background: #ba1122;
+	border: 3px solid #ededed;
 
-  border-radius: 50%;
+	border-radius: 50%;
 
-  color: #ededed;
-  line-height: 37px;
-  text-align: center;
+	color: #ededed;
+	line-height: 37px;
+	text-align: center;
 }
 ```
 
 ```js
 <MarkerClusterGroup
-  iconCreateFunction={(cluster) =>
-    L.divIcon({
-      html: `<span>${cluster.getChildCount()}</span>`,
-      className: "clusterDivStyle",
-      iconSize: L.point(40, 40, true),
-    })
-  }
+	iconCreateFunction={(cluster) =>
+		L.divIcon({
+			html: `<span>${cluster.getChildCount()}</span>`,
+			className: "clusterDivStyle",
+			iconSize: L.point(40, 40, true)
+		})
+	}
 >
-  <Marker position={[0, 0]} />
-  <Marker position={[0, 0]} />
-  <Marker position={[0, 0]} />
+	<Marker position={[0, 0]} />
+	<Marker position={[0, 0]} />
+	<Marker position={[0, 0]} />
 </MarkerClusterGroup>
 ```

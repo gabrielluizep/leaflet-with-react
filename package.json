@@ -1,42 +1,51 @@
 {
-  "homepage": "http://gabrielluizep.github.io/leaflet-with-react",
-  "name": "leaflet-with-react",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.12.3",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "leaflet": "^1.7.1",
-    "leaflet.heat": "^0.2.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-leaflet": "^3.2.1",
-    "react-leaflet-markercluster": "^3.0.0-rc1",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "gh-pages": "^3.2.3"
-  }
+	"homepage": "http://gabrielluizep.github.io/leaflet-with-react",
+	"name": "leaflet-with-react",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@testing-library/jest-dom": "^5.14.1",
+		"@testing-library/react": "^11.2.7",
+		"@testing-library/user-event": "^12.8.3",
+		"@types/jest": "^27.0.2",
+		"@types/node": "^16.10.2",
+		"@types/react": "^17.0.26",
+		"@types/react-dom": "^17.0.9",
+		"@types/react-router-dom": "^5.3.0",
+		"leaflet": "^1.7.1",
+		"leaflet.heat": "^0.2.0",
+		"prettier": "^2.4.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-leaflet": "^3.2.1",
+		"react-leaflet-markercluster": "^3.0.0-rc1",
+		"react-scripts": "4.0.3",
+		"typescript": "^4.4.3",
+		"web-vitals": "^1.1.2"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
+		"prettier": "prettier --write ."
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not op_mini all"
+	],
+	"devDependencies": {
+		"@types/leaflet": "^1.7.5",
+		"gh-pages": "^3.2.3",
+		"react-router-dom": "^5.3.0"
+	}
 }
