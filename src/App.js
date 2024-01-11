@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 
-import { Button, Grid, Typography, Paper } from "@material-ui/core";
-
 import { Heatmap, MarkerCluster } from "./components";
 
 const App = () => {
   const [page, setPage] = useState("mark");
   return (
     <>
-      <Paper
+      <div
         style={{
           width: "100vw",
           height: "10vh",
@@ -17,36 +15,36 @@ const App = () => {
         }}
         elevation={10}
       >
-        <Grid
+        <div
           style={{ width: "50%", height: "100%", paddingLeft: "20px" }}
           container
           alignItems="center"
         >
-          <Typography variant="h6">leaflet-with-react</Typography>
-        </Grid>
-        <Grid
+          <p variant="h6">leaflet-with-react</p>
+        </div>
+        <div
           style={{ width: "50%", height: "100%", paddingRight: "20px" }}
           container
           alignItems="center"
           justifyContent="flex-end"
         >
-          <Button
+          <button
             style={{ marginRight: "20px" }}
             variant="contained"
             color="primary"
             onClick={() => setPage("heatmap")}
           >
             Heatmap
-          </Button>
-          <Button
+          </button>
+          <button
             variant="contained"
             color="primary"
             onClick={() => setPage("markercluster")}
           >
             Markercluster
-          </Button>
-        </Grid>
-      </Paper>
+          </button>
+        </div>
+      </div>
       {page === "heatmap" ? <Heatmap /> : <MarkerCluster />}
     </>
   );

@@ -1,31 +1,13 @@
 import React from "react";
 
-import { makeStyles, Typography } from "@material-ui/core";
-
 import L from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 
 import { locations } from "../../locations";
 
-const useStyles = makeStyles((theme) => ({
-  clusterDivStyle: {
-    width: "40px",
-    height: "40px",
-
-    background: "#ba1122",
-    border: "3px solid #ededed",
-
-    borderRadius: "50%",
-
-    color: "#ededed",
-    lineHeight: "37px",
-    textAlign: "center",
-  },
-}));
 
 function MarkerCluster() {
-  const classes = useStyles();
   return (
     <MapContainer
       style={{
@@ -44,7 +26,7 @@ function MarkerCluster() {
         iconCreateFunction={(cluster) =>
           L.divIcon({
             html: `<span>${cluster.getChildCount()}</span>`,
-            className: classes.clusterDivStyle,
+            className: "clusterDivStyle",
             iconSize: L.point(40, 40, true),
           })
         }
@@ -53,8 +35,8 @@ function MarkerCluster() {
           return (
             <Marker key={index} position={[point[0], point[1]]}>
               <Popup>
-                <Typography>Latitude: {point[0]}</Typography>
-                <Typography>Longitude: {point[1]}</Typography>
+                <p>Latitude: {point[0]}</p>
+                <p>Longitude: {point[1]}</p>
               </Popup>
             </Marker>
           );
