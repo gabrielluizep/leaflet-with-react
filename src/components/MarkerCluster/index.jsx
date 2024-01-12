@@ -9,10 +9,7 @@ import { locations } from '../../locations';
 function MarkerCluster() {
   return (
     <MapContainer
-      style={{
-        width: '100vw',
-        height: '90vh',
-      }}
+      style={{ height: '100%' }}
       center={[-37.8871864333, 175.4691891]}
       zoom={13}
     >
