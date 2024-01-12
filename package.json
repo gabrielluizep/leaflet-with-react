@@ -3,6 +3,7 @@
   "name": "leaflet-with-react",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "leaflet": "^1.9.4",
     "leaflet.heat": "^0.2.0",
@@ -16,11 +17,7 @@
     "build": "vite build",
     "deploy": "gh-pages -d build"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not op_mini all"
-  ],
+  "browserslist": [">0.2%", "not dead", "not op_mini all"],
   "devDependencies": {
     "@biomejs/biome": "^1.5.1",
     "@types/react": "^18.2.47",
