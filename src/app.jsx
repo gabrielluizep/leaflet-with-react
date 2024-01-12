@@ -9,11 +9,19 @@ const App = () => {
   return (
     <div className="h-screen relative">
       <div className="flex px-8 py-4 mt-4 absolute top-0 left-1/2 -translate-x-1/2 w-3/4 z-[1000] bg-blue-100 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-50 border border-gray-100">
-        <h1 className="font-bold text-lg text-blue-400">leaflet-with-react</h1>
+        <a
+          href="https://github.com/gabrielluizep/leaflet-with-react"
+          className="flex flex-col"
+        >
+          <h1 className="font-bold text-lg text-blue-400">
+            leaflet-with-react
+          </h1>
+          <p className="ml-auto text-xs -mt-1">view on github</p>
+        </a>
 
         <a
           href="https://www.gabrielluizep.dev"
-          className="flex items-center gap-2 ml-2"
+          className="flex items-center gap-2 ml-4"
         >
           <p className="text-sm text-gray-500">by</p>
           <img
