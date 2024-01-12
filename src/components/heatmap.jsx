@@ -4,7 +4,7 @@ import L from 'leaflet';
 import 'leaflet.heat';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 
-import { locations } from '../../locations';
+import { locations } from '../locations';
 
 const HeatmapLayer = () => {
   const map = useMap();

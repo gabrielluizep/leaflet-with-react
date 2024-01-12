@@ -4,7 +4,7 @@ import L from 'leaflet';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 
-import { locations } from '../../locations';
+import { locations } from '../locations';
 
 function MarkerCluster() {
   return (

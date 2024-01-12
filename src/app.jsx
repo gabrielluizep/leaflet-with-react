@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import { Heatmap, MarkerCluster } from './components';
+import Heatmap from './components/heatmap';
+import MarkerCluster from './components/markercluster';
 
 const App = () => {
   const [page, setPage] = useState('mark');
