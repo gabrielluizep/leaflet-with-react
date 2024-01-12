@@ -1,17 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import L from "leaflet";
+import L from 'leaflet';
 
-import App from "./App";
+import App from './App';
 
-import "./index.css";
-import "leaflet/dist/leaflet.css";
+import 'leaflet/dist/leaflet.css';
+import './index.css';
 
-import icon from "leaflet/dist/images/marker-icon.png";
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
-let DefaultIcon = L.icon({
+const DefaultIcon = L.icon({
   iconUrl: icon,
   shadowUrl: iconShadow,
 });
@@ -22,5 +22,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-)
-
+);

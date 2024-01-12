@@ -22,6 +22,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@biomejs/biome": "^1.5.1",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "@vitejs/plugin-react": "^4.2.1",

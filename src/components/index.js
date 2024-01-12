@@ -1,4 +1,4 @@
-import Heatmap from "./Heatmap";
-import MarkerCluster from "./MarkerCluster";
+import Heatmap from './Heatmap';
+import MarkerCluster from './MarkerCluster';
 
 export { Heatmap, MarkerCluster };

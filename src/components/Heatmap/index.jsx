@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from 'react';
 
-import L from "leaflet";
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
-import "leaflet.heat";
+import L from 'leaflet';
+import 'leaflet.heat';
+import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 
-import { locations } from "../../locations";
+import { locations } from '../../locations';
 
 const HeatmapLayer = () => {
   const map = useMap();
@@ -18,8 +18,8 @@ function Heatmap() {
   return (
     <MapContainer
       style={{
-        width: "100vw",
-        height: "90vh",
+        width: '100vw',
+        height: '90vh',
       }}
       center={[-37.8871864333, 175.4691891]}
       zoom={13}
