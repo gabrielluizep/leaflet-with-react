@@ -225,12 +225,13 @@ Para a utilização do clusterizador de marcadores, ou seja um agrupador de marc
 Começaremos instalando a biblioteca:
 
 ```bash
-npm i react-leaflet-markercluster
+npm i react-leaflet-cluster
 ```
 
 Para a utilização da clusterização de marcadores precisaremos utilizar o componente MarkerClusterGroup, com os marcadores que se deseja agrupar como filhos deste componente:
-
-import MarkerClusterGroup from "react-leaflet-markercluster";
+```js
+import MarkerClusterGroup from "react-leaflet-cluster";
+```
 
 ```js
 <MarkerClusterGroup>
